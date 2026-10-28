@@ -1,0 +1,118 @@
+Test case ID,Workbook tab,Title,Workbook status,Automation status,Feature file,Scenario,Tags,Reason if not automated
+LOGIN-TC-001,Login Test,Verify login page loads successfully,pass,Automated - PR smoke,01_login_page_layout.feature,Login page loads successfully without errors,@smoke,
+LOGIN-TC-002,Login Test,Verify WealthVerze logo is displayed,pass,Automated - PR smoke,01_login_page_layout.feature,WealthVerze logo is displayed,@smoke,
+LOGIN-TC-003,Login Test,Verify Sign in heading is displayed,pass,Automated - regression,01_login_page_layout.feature,Sign in heading is displayed,,
+LOGIN-TC-004,Login Test,Verify OTP instruction text is displayed,pass,Automated - regression,01_login_page_layout.feature,OTP instruction text is displayed,,
+LOGIN-TC-005,Login Test,Verify Continue with Google button is displayed,pass,Automated - regression,01_login_page_layout.feature,Continue with Google button is displayed,,
+LOGIN-TC-006,Login Test,Verify mobile number field is displayed,pass,Automated - PR smoke,01_login_page_layout.feature,Mobile number field is displayed and editable,@smoke,
+LOGIN-TC-007,Login Test,Verify country code is displayed,pass,Automated - regression,01_login_page_layout.feature,Configured country code is displayed,,
+LOGIN-TC-008,Login Test,Verify Send code button is displayed,pass,Automated - PR smoke,01_login_page_layout.feature,Send code button is displayed with a readable label,@smoke,
+LOGIN-TC-009,Login Test,Verify Terms of Service link is displayed,Fail,Automated - regression,01_login_page_layout.feature,Terms of Service link is displayed,,
+LOGIN-TC-010,Login Test,Verify Privacy Policy link is displayed,Fail,Automated - regression,01_login_page_layout.feature,Privacy Policy link is displayed,,
+LOGIN-TC-011,Login Test,Verify theme toggle is displayed,pass,Automated - regression,01_login_page_layout.feature,Theme toggle is displayed,,
+LOGIN-TC-012,Login Test,Verify reCAPTCHA widget is displayed,pass,Automated - regression,01_login_page_layout.feature,reCAPTCHA widget is loaded,,
+LOGIN-TC-013,Login Test,Verify login with a valid registered mobile number,pass,Automated - PR smoke,03_otp_request.feature,Registered mobile number starts the OTP request,@smoke,
+LOGIN-TC-014,Login Test,Verify submission with an empty mobile number,pass,Automated - PR smoke,02_mobile_number_validation.feature,Empty mobile number cannot request a code,@smoke,
+LOGIN-TC-015,Login Test,Verify mobile number with fewer than 10 digits,pass,Automated - regression,02_mobile_number_validation.feature,Nine-digit number is rejected,,
+LOGIN-TC-016,Login Test,Verify mobile number with more than 10 digits,pass,Automated - regression,02_mobile_number_validation.feature,Eleven-digit number cannot exceed ten digits,,
+LOGIN-TC-017,Login Test,Verify mobile number containing alphabets,pass,Automated - regression,02_mobile_number_validation.feature,Alphabetic characters are rejected,,
+LOGIN-TC-018,Login Test,Verify mobile number containing special characters,pass,Automated - regression,02_mobile_number_validation.feature,Special characters are rejected,,
+LOGIN-TC-019,Login Test,Verify mobile number containing spaces,pass,Automated - blocked on requirement clarification,02_mobile_number_validation.feature,Spaces inside the number are not accepted,@needs-clarification,
+LOGIN-TC-020,Login Test,Verify mobile number containing only zeros,pass,Automated - regression,02_mobile_number_validation.feature,Ten zeros are not accepted,,
+LOGIN-TC-021,Login Test,Verify mobile number should contain exact 10  digits,pass,Automated - PR smoke,02_mobile_number_validation.feature,Exactly ten digits with a valid format enables Send code,@smoke,
+LOGIN-TC-022,Login Test,Verify pasting a mobile number,pass,Automated - PR smoke,02_mobile_number_validation.feature,Pasting a valid number is accepted and validated,@smoke,
+LOGIN-TC-023,Login Test,Verify login with an unregistered mobile number,pass,Automated - regression,03_otp_request.feature,Unregistered mobile number shows the account message,,
+LOGIN-TC-024,Login Test,Verify login with valid registered mobile number,pass,Automated - PR smoke,03_otp_request.feature,Code is delivered to the registered mobile number,@smoke,
+LOGIN-TC-025,Login Test,Verify loading state during OTP generation,pass,Automated - regression,03_otp_request.feature,Send code shows a loading state while the request is in progress,,
+LOGIN-TC-026,Login Test,Verify multiple rapid clicks on Send code,pending,Automated - feature not built yet,03_otp_request.feature,Rapid repeated clicks on Send code send only one request,@pending-feature,
+LOGIN-TC-027,Login Test,Verify OTP request when the OTP service is unavailable,Pending,Not automated,,,,Needs the OTP service stopped; requires environment control
+LOGIN-TC-028,Login Test,Verify successful login with a valid OTP,Pass,Automated - PR smoke,04_otp_verification.feature,Valid OTP signs the user in,@smoke,
+LOGIN-TC-029,Login Test,Verify login with an invalid OTP,Not Executed,Automated - PR smoke,04_otp_verification.feature,Wrong OTP is rejected and the user is not signed in,@smoke,
+LOGIN-TC-030,Login Test,Verify login with an expired OTP,Not Executed,Not automated,,,,Needs real OTP expiry window; Firebase test codes do not expire
+LOGIN-TC-031,Login Test,Verify OTP field accepts only 6 numeric digits,Not Executed,Automated - regression,04_otp_verification.feature,OTP field accepts only up to six digits,,
+LOGIN-TC-032,Login Test,Verify Verify-and-sign-in is disabled until a 6-digit OTP is entered,Not Executed,Automated - regression,04_otp_verification.feature,Verify and sign in stays disabled until six digits are entered,,
+LOGIN-TC-033,Login Test,Verify Resend code option on the OTP screen,Not Executed,Automated - slow (nightly),04_otp_verification.feature,Resend code requests a new code after the countdown,@slow,
+LOGIN-TC-034,Login Test,Verify Change number returns to the mobile entry screen,Not Executed,Automated - regression,04_otp_verification.feature,Change number returns to the mobile entry screen,,
+LOGIN-TC-035,Login Test,Verify an already-authenticated user is redirected away from login,Not Executed,Automated - regression,06_session_access_and_security.feature,Signed-in user opening the login page is sent to the dashboard,,
+LOGIN-TC-036,Login Test,Verify an unauthenticated user is redirected to login from a protected page,Not Executed,Automated - PR smoke,06_session_access_and_security.feature,Signed-out user is sent to login from a protected page,@smoke,
+LOGIN-TC-037,Login Test,Verify Terms of Service link opens the terms content,Not Executed,Automated - regression,01_login_page_layout.feature,Terms of Service link opens the terms content,,
+LOGIN-TC-038,Login Test,Verify Privacy Policy link opens the privacy content,Not Executed,Automated - regression,01_login_page_layout.feature,Privacy Policy link opens the privacy content,,
+LOGIN-TC-039,Login Test,Verify Continue with Google initiates Google sign-in,Not Executed,Automated - regression,05_google_and_account_linking.feature,Continue with Google starts the Google sign-in window,,
+LOGIN-TC-040,Login Test,Verify pressing Enter submits a valid mobile number,Not Executed,Automated - regression,03_otp_request.feature,Pressing Enter submits a valid mobile number,,
+LOGIN-TC-041,Login Test,verify pressing Enter submits a valid otp number,Not Executed,Automated - regression,04_otp_verification.feature,Pressing Enter submits a valid OTP,,
+LOGIN-TC-042,Login Missing Cases,Verify mobile number field is focused on page load,Not Executed,Automated - regression,01_login_page_layout.feature,Mobile number field has focus on page load,,
+LOGIN-TC-043,Login Missing Cases,Verify mobile number placeholder and label,Not Executed,Automated - regression,01_login_page_layout.feature,Mobile number label and placeholder are correct,,
+LOGIN-TC-044,Login Missing Cases,Verify pasted number with +91 / 91 / 0 prefix is normalised,Not Executed,Automated - regression,02_mobile_number_validation.feature,Pasted number with country prefix is normalised,,
+LOGIN-TC-045,Login Missing Cases,Verify number starting with digits 0-5 is handled,Not Executed,Automated - known defect (expected to fail until fixed),02_mobile_number_validation.feature,Numbers that do not start with 6 to 9 are rejected,@known-defect,
+LOGIN-TC-046,Login Missing Cases,Verify non-English (Devanagari) digits are rejected,Not Executed,Automated - regression,02_mobile_number_validation.feature,Devanagari digits are rejected,,
+LOGIN-TC-047,Login Missing Cases,Verify leading and trailing spaces are trimmed,Not Executed,Automated - regression,02_mobile_number_validation.feature,Leading and trailing spaces are trimmed,,
+LOGIN-TC-048,Login Missing Cases,Verify typing an extra digit on a number starting with 91 does not change the number,Not Executed,Automated - known defect (expected to fail until fixed),02_mobile_number_validation.feature,Extra typed digit is ignored once ten digits are present,@known-defect,
+LOGIN-TC-049,Login Missing Cases,Verify pasting an 11-digit number does not silently send to a different number,Not Executed,Automated - known defect (expected to fail until fixed),02_mobile_number_validation.feature,Pasting an eleven-digit number does not silently send to a cut-down number,@known-defect,
+LOGIN-TC-050,Login Missing Cases,Verify error message clears when the user edits the number,Not Executed,Automated - regression,03_otp_request.feature,Error message clears when the mobile number is edited,,
+LOGIN-TC-051,Login Missing Cases,Verify all controls are disabled while the OTP is being sent,Not Executed,Automated - regression,03_otp_request.feature,Other controls are disabled while the code is being sent,,
+LOGIN-TC-052,Login Missing Cases,Verify pressing Enter with an incomplete number does nothing,Not Executed,Automated - regression,02_mobile_number_validation.feature,Pressing Enter with an incomplete number sends nothing,,
+LOGIN-TC-053,Login Missing Cases,Verify numeric keypad opens on a mobile device,Not Executed,Automated - regression,02_mobile_number_validation.feature,Numeric keypad is requested for the mobile field,,
+LOGIN-TC-054,Login Missing Cases,"Verify OTP screen heading and ""Sent to"" number",Not Executed,Automated - regression,04_otp_verification.feature,OTP screen heading and destination number are correct,,
+LOGIN-TC-055,Login Missing Cases,Verify Google button is hidden on the OTP screen,Not Executed,Automated - regression,04_otp_verification.feature,Continue with Google is hidden on the OTP screen,,
+LOGIN-TC-056,Login Missing Cases,Verify OTP field is focused automatically,Not Executed,Automated - regression,04_otp_verification.feature,OTP field receives focus automatically,,
+LOGIN-TC-057,Login Missing Cases,Verify pasting an OTP,Not Executed,Automated - regression,04_otp_verification.feature,Pasted OTP is cleaned to six digits,,
+LOGIN-TC-058,Login Missing Cases,Verify OTP field is cleared and refocused after a wrong OTP,Not Executed,Automated - blocked on requirement clarification,04_otp_verification.feature,Wrong OTP clears the field and keeps resend available,@needs-clarification,
+LOGIN-TC-059,Login Missing Cases,Verify repeated wrong OTP attempts are blocked,manual,Automated - destructive (own CI job),04_otp_verification.feature,Repeated wrong OTPs are blocked,@destructive,
+LOGIN-TC-060,Login Missing Cases,Verify exact expiry message for an expired OTP,pending,Not automated,,,,Needs real OTP expiry window and exact expiry copy check
+LOGIN-TC-061,Login Missing Cases,Verify Resend countdown,pass,Automated - regression,04_otp_verification.feature,Resend countdown runs for 30 seconds then enables Resend code,@regression,
+LOGIN-TC-067,Login Missing Cases,Verify message when the backend is down after OTP,pending,Not automated,,,,Needs backend stopped mid-flow; requires environment control
+LOGIN-TC-062,Login Missing Cases,Verify old OTP is invalid after Resend,pending,Not automated,,,,"Firebase test number always issues 123456, so old and new codes cannot be told apart"
+LOGIN-TC-063,Login Missing Cases,Verify Change number resets the OTP screen and keeps the number,Not Executed,Automated - regression,04_otp_verification.feature,Change number clears the code and error but keeps the number,,
+LOGIN-TC-064,Login Missing Cases,Verify Change number then sending to a different number,pending,Automated - regression,04_otp_verification.feature,Changing the number sends a code to the new number,,
+LOGIN-TC-065,Login Missing Cases,Verify double click / double Enter on Verify sends one request,pass,Automated - regression,04_otp_verification.feature,Double-clicking Verify signs in once without error,,
+LOGIN-TC-066,Login Missing Cases,Verify message when the internet is offline,pass,Not automated,,,,Needs network offline emulation (DevTools CDP); planned
+LOGIN-TC-068,Login Missing Cases,Verify message when backend sign-in is switched off,pending,Not automated,,,,Needs backend started with AUTH_MODE=deny; separate environment
+LOGIN-TC-069,Login Missing Cases,Verify screen when Firebase is not configured in the UI build,Not Executed,Not automated,,,,Needs a UI build without VITE_FIREBASE_* values; separate build
+LOGIN-TC-070,Login Missing Cases,Verify message when SMS cannot be sent,Not Executed,Not automated,,,,Needs a real non-test number on the Firebase free plan; real SMS is out of scope
+LOGIN-TC-071,Login Missing Cases,"Verify backend down at page load shows Unavailable, not login",Not Executed,Not automated,,,,Needs backend down at page load; requires environment control
+LOGIN-TC-072,Login Missing Cases,Verify family head login lands with Family switch,Not Executed,Automated - regression,06_session_access_and_security.feature,Family head sees the Family switch on the dashboard,,
+LOGIN-TC-073,Login Missing Cases,Verify family member login sees only own data,Not Executed,Automated - regression,06_session_access_and_security.feature,Family member sees only their own dashboard,,
+LOGIN-TC-074,Login Missing Cases,Verify RM login lands on the book,pass,Not automated,,,,Needs RM staff test account and mobile number (not supplied)
+LOGIN-TC-075,Login Missing Cases,Verify Senior RM login and access,Not Executed,Not automated,,,,Needs SRM staff test account and mobile number (not supplied)
+LOGIN-TC-076,Login Missing Cases,Verify Admin login lands on the firm view,Not Executed,Not automated,,,,Needs Admin staff test account and mobile number (not supplied)
+LOGIN-TC-077,Login Missing Cases,Verify number registered as both client and RM signs in as client,Not Executed,Not automated,,,,Needs a number registered as both client and RM (test data)
+LOGIN-TC-078,Login Missing Cases,Verify number shared by two clients is rejected,Not Executed,Not automated,,,,Needs two client records sharing a mobile number (test data)
+LOGIN-TC-079,Login Missing Cases,Verify suspended staff user cannot sign in,Not Executed,Not automated,,,,Needs a suspended staff test account (test data)
+LOGIN-TC-080,Login Missing Cases,Verify a client cannot open staff pages by URL,Not Executed,Automated - regression,06_session_access_and_security.feature,Client cannot open staff pages by URL,,
+LOGIN-TC-081,Login Missing Cases,Verify user returns to the requested page after login,Not Executed,Automated - regression,06_session_access_and_security.feature,User returns to the requested page after signing in,,
+LOGIN-TC-082,Login Missing Cases,Verify unknown page before login lands on dashboard after login,Not Executed,Automated - regression,06_session_access_and_security.feature,Unknown page before login lands on the dashboard after sign-in,,
+LOGIN-TC-083,Login Missing Cases,Verify external redirect target is ignored after login,Not Executed,Not automated,,,,Needs clarification of how the saved return path is set
+LOGIN-TC-084,Login Missing Cases,Verify Google account chooser always appears,manual,Not automated,,,,Google account chooser needs a real Google account; manual
+LOGIN-TC-085,Login Missing Cases,Verify closing the Google popup shows no error,manual,Not automated,,,,Google popup close needs a real Google popup; manual
+LOGIN-TC-086,Login Missing Cases,Verify message when the browser blocks the popup,manual,Not automated,,,,Browser popup blocking is a browser setting; manual
+LOGIN-TC-087,Login Missing Cases,Verify non-company Google account is rejected,manual,Not automated,,,,Needs a non-company Google account (test data)
+LOGIN-TC-088,Login Missing Cases,Verify unregistered Google account is rejected,manual,Not automated,,,,Needs an unregistered company Google account (test data)
+LOGIN-TC-089,Login Missing Cases,Verify double click on Continue with Google,Manual,Automated - regression,05_google_and_account_linking.feature,Double-clicking Continue with Google opens one window only,,
+LOGIN-TC-090,Login Missing Cases,Verify link-Google step after OTP login,Not Executed,Automated - blocked on test data,05_google_and_account_linking.feature,Link Google step appears after OTP sign-in when Google is not linked,@needs-test-data,
+LOGIN-TC-091,Login Missing Cases,Verify link-mobile step after Google login,Not Executed,Not automated,,,,Needs a Google-only test account to reach the link-mobile step (test data)
+LOGIN-TC-092,Login Missing Cases,Verify Not now skips linking,Not Executed,Automated - blocked on test data,05_google_and_account_linking.feature,Not now skips linking and reaches the dashboard,@needs-test-data,
+LOGIN-TC-093,Login Missing Cases,Verify successful account link,Not Executed,Not automated,,,,Needs a Google account and a phone for the link flow (test data)
+LOGIN-TC-094,Login Missing Cases,Verify link failure does not block sign-in,Not Executed,Not automated,,,,Needs a Google account already registered elsewhere (test data)
+LOGIN-TC-095,Login Missing Cases,Verify link step is skipped when both methods are linked,Not Executed,Automated - blocked on test data,05_google_and_account_linking.feature,Link step is skipped when both methods are already linked,@needs-test-data,
+LOGIN-TC-096,Login Missing Cases,Verify Sign out from every location,Not Executed,Automated - regression,06_session_access_and_security.feature,Sign out ends the session and Back does not reveal the dashboard,,
+LOGIN-TC-097,Login Missing Cases,Verify page reload keeps the user signed in,Not Executed,Automated - regression,06_session_access_and_security.feature,Reloading the page keeps the user signed in,,
+LOGIN-TC-098,Login Missing Cases,Verify automatic sign-out after 5 minutes idle,Not Executed,Automated - slow (nightly),06_session_access_and_security.feature,Session ends after five minutes of inactivity,@slow,
+LOGIN-TC-099,Login Missing Cases,Verify activity in one tab keeps another tab signed in,Not Executed,Not automated,,,,Two-tab idle timing; planned as @slow
+LOGIN-TC-100,Login Missing Cases,Verify closing the tab ends the session,Not Executed,Not automated,,,,Closing the only browser window cannot be asserted reliably in Selenium; manual
+LOGIN-TC-101,Login Missing Cases,Verify a second tab stays signed in,Not Executed,Automated - regression,06_session_access_and_security.feature,A second tab opens signed in and the first tab stays signed in,,
+LOGIN-TC-102,Login Missing Cases,Verify closing the browser signs the user out,Not Executed,Not automated,,,,Closing the whole browser; manual
+LOGIN-TC-103,Login Missing Cases,Verify server session expiry (12 hours),Manual,Not automated,,,,Needs 12-hour server session expiry; manual
+LOGIN-TC-104,Login Missing Cases,Verify next user does not see the previous user's data,Not Executed,Automated - regression,06_session_access_and_security.feature,Next user does not see the previous user's data,,
+LOGIN-TC-105,Login Missing Cases,Verify session cookie attributes,Not Executed,Automated - regression,06_session_access_and_security.feature,Session cookie has the required security attributes,,
+LOGIN-TC-106,Login Missing Cases,Verify JavaScript cannot read the session cookie,Not Executed,Automated - regression,06_session_access_and_security.feature,JavaScript cannot read the session cookie,,
+LOGIN-TC-107,Login Missing Cases,Verify no token or phone number in browser storage,Not Executed,Automated - regression,06_session_access_and_security.feature,"Browser storage holds no token, OTP or phone number",,
+LOGIN-TC-108,Login Missing Cases,Verify rejection message is identical for every unknown account,Not Executed,Not automated,,,,"Needs unknown, duplicate and suspended numbers to compare messages (test data)"
+LOGIN-TC-109,Login Missing Cases,Verify theme toggle switches and persists,Not Executed,Automated - regression,01_login_page_layout.feature,Theme toggle switches and persists after reload,,
+LOGIN-TC-110,Login Missing Cases,Verify browser tab title,Not Executed,Automated - regression,01_login_page_layout.feature,Browser tab title is correct,,
+LOGIN-TC-111,Login Missing Cases,Verify security disclaimer text,Not Executed,Automated - regression,01_login_page_layout.feature,Security disclaimer text is displayed,,
+LOGIN-TC-112,Login Missing Cases,Verify layout on mobile and small screens,Not Executed,Automated - regression,01_login_page_layout.feature,Brand panel and form adapt to screen width,,
+LOGIN-TC-113,Login Missing Cases,Verify keyboard navigation and focus,Manual,Automated - regression,01_login_page_layout.feature,Keyboard navigation reaches every control in logical order,,
+LOGIN-TC-114,Login Missing Cases,Verify errors are announced to screen readers,Not Executed,Automated - regression,04_otp_verification.feature,Wrong OTP error is announced to screen readers,,
+LOGIN-TC-115,Login Missing Cases,Verify login on all supported browsers,Not Executed,Not automated,,,,Cross-browser coverage; planned as a CI browser matrix (Chrome only today)
+LOGIN-TC-116,Login Missing Cases,Verify page at 200% zoom,manual,Not automated,,,,200% zoom visual check; manual
+LOGIN-TC-117,Login Missing Cases,Verify splash screen while the session is checked,manual,Not automated,,,,Splash on slow network; manual timing check
